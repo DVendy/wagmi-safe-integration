@@ -48,6 +48,7 @@ const useSepoliaTestContract = (props: Props) => {
                 args: [value]
             })
             const storeHash = await props.walletClient.writeContract(request);
+            console.log('Store hash', storeHash);
 
             const storeReceipt = await props.publicClient.waitForTransactionReceipt({ hash: storeHash });
             console.log('Store receipt', storeReceipt);
