@@ -49,11 +49,11 @@ const useSepoliaTestContract = (props: Props) => {
             })
             const storeHash = await props.walletClient.writeContract(request);
             console.log('Store hash', storeHash);
+            return `Proposal created see the progress in Safe's transactions menu`;
 
-            const storeReceipt = await props.publicClient.waitForTransactionReceipt({ hash: storeHash });
-            console.log('Store receipt', storeReceipt);
-
-            return 'success';
+            // Not compatible for Safe
+            // const storeReceipt = await props.publicClient.waitForTransactionReceipt({ hash: storeHash });
+            // console.log('Store receipt', storeReceipt);
         } catch (error) {
             console.error(error);
             return 'error';
