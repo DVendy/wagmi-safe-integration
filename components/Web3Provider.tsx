@@ -9,7 +9,6 @@ import { safe } from 'wagmi/connectors'
 
 const config = createConfig(
     getDefaultConfig({
-        // Your dApps chains
         chains: [sepolia],
         connectors: [
             safe({
@@ -17,15 +16,10 @@ const config = createConfig(
             })
         ],
         transports: {
-            // RPC URL for each chain
             [sepolia.id]: http(),
         },
-
-        // Required API Keys
         walletConnectProjectId: '-',
-
-        // Required App Info
-        appName: "Dynamic - Safe",
+        appName: "Wagmi - Safe",
     }),
 );
 
